@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    background: black;
+    align-items: center;
+    justify-content: center;
+}
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 100;
+}
+
+.logoPS{
+    font-size: 32px;
+    color: white;
+    font-family: 'Barcade', sans-serif;
+    text-decoration: none;
+    
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Espacio entre el logo y el navbar */
+}
+
+.navbar a{
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Barcade No Bar Bold', sans-serif;
+    margin-left: 10%;
+
+}
+.navbar a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: .3s;
+}
+.navbar a:hover::before{
+    width: 100%;
+}
