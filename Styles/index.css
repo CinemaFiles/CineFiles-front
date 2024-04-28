@@ -19,17 +19,24 @@ body{
     padding: 20px 100px;
     background: transparent;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
     z-index: 100;
 }
+
 .logoPS{
     font-size: 32px;
     color: white;
-    font-family: 'Pacifico', cursive;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Barcade', sans-serif;
     text-decoration: none;
-    font-weight: 700;
+    
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Espacio entre el logo y el navbar */
 }
 
 .navbar a{
@@ -38,7 +45,9 @@ body{
     text-decoration: none;
     font-size: 18px;
     font-weight: 500;
-    margin-left: 40px;
+    font-family: 'Barcade No Bar Bold', sans-serif;
+    margin-left: 10%;
+
 }
 .navbar a::before {
     content: '';
@@ -53,4 +62,5 @@ body{
 .navbar a:hover::before{
     width: 100%;
 }
+
 
