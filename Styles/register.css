@@ -96,7 +96,7 @@ spline-viewer {
 }
 
 
-.login{
+.register{
     height: 100%;
     width: 100%;
     min-height: 100vh;
@@ -104,11 +104,10 @@ spline-viewer {
     position: relative;
     display: flex;
     grid-template-columns: repeat(2. 1fr);
-    grid-template-areas: "inicio-text inicio-img";
     align-items: center;
     gap: 2rem;
     justify-content: center;
-    z-index: 10; /* Asegura que el contenido esté sobre el fondo */
+    z-index: 10; 
 }
 
 .form-box{
@@ -130,7 +129,6 @@ h2{
     text-align: center;
 }
 .inputbox{
-    background: transparent;
     position: relative;
     margin: 30px 0;
     width: 310px;
@@ -145,9 +143,6 @@ h2{
     font-size: 1em;
     pointer-events: none;
     transition: .5s;
-}
-.loginf{
-    background: transparent;
 }
 input:focus ~ label,
 input:valid ~ label{
@@ -199,18 +194,4 @@ button{
     cursor: pointer;
     font-size: 1em;
     font-weight: 600;
-}
-.register{
-    font-size: .9em;
-    color: #fff;
-    text-align: center;
-    margin: 25px 0 10px;
-}
-.register p a{
-    text-decoration: none;
-    color: #fff;
-    font-weight: 600;
-}
-.register p a:hover{
-    text-decoration: underline;
 }
