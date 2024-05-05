@@ -100,11 +100,7 @@ section {
     z-index: 10; 
 }
 
-.olaric{
-    position: relative;
-    color: aliceblue;
-    z-index: 10; 
-}
+
 
 * {
     border: 0;
