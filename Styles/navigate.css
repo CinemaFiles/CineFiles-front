@@ -99,6 +99,7 @@ section {
     position: relative;
     color: aliceblue;
     z-index: 10; 
+    background: transparent;
 }
 
 * {
@@ -119,6 +120,7 @@ section {
   }
   body, .search-bar {
     display: flex;
+    background: transparent;
   }
   body {
     background: #f1f1f1;
@@ -260,10 +262,11 @@ section {
 
   /* Pa hacer el carrusel*/
 
-  .carrusel {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: scroll;
+.carrusel {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  background: transparent;
 }
 
 .carrusel img {
@@ -278,6 +281,32 @@ section {
 
 .carrusel::-webkit-scrollbar {
   display: none;
+}
+select[name="genre"] {
+  background: #171717;
+  color: #f1f1f1;
+  border: 0;
+  border-radius: 0.375em ;
+  padding: 0.75em;
+  width: 6em;
+  height: 4em;
+  cursor: pointer;
+  appearance: none;
+  justify-content: center;
+  font-family: 'Barcade No Bar Bold', sans-serif;
+
+}
+option {
+  background: #171717;
+  color: #f1f1f1;
+  border: 0;
+  border-radius: 0.375em ;
+  padding: 0.75em;
+  width: 8em;
+  cursor: pointer;
+  appearance: none;
+  font-family: 'Barcade No Bar Bold', sans-serif;
+
 }
 
 
