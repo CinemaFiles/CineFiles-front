@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "poppins", sans-serif;
+    background-color: black;
 }
 body{
     min-height: 100vh;
@@ -256,4 +257,29 @@ section {
       background: #f1f1f1;
     }
   }
+
+  /* Pa hacer el carrusel*/
+
+  .carrusel {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+}
+
+.carrusel img {
+  flex: 1 0 auto;
+  margin: 0 10px;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.carrusel::-webkit-scrollbar {
+  display: none;
+}
+
+
+  
 
