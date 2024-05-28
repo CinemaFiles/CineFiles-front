@@ -36,7 +36,7 @@ body{
 
 /* Cuando la pantalla tiene 600px o menos, disminuir el tamaño de la fuente */
 /* Cuando la pantalla tiene 600px o menos, ocultar los elementos .logoPS */
-@media (max-width: 1300px) {
+@media (max-width: 1400px) {
     
     .logoPS:nth-child(1) { display: none;}
 

@@ -33,7 +33,7 @@ body{
     animation: fadeIn 0.5s ease forwards infinite; 
     animation-fill-mode: both;
 }
-@media (max-width: 1300px) {
+@media (max-width: 1400px) {
     
     .logoPS:nth-child(1) { display: none;}
 
