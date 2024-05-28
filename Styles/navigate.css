@@ -36,6 +36,26 @@ body{
 }
 
 
+@media (max-width: 1300px) {
+    
+  .logoPS:nth-child(1) { display: none;}
+
+  .logoPS:nth-child(8) { display: none;}
+
+}
+@media (max-width: 900px) {
+  
+      .logoPS:nth-child(1) { display: none;}
+      .logoPS:nth-child(2) { display: none;}
+      .logoPS:nth-child(7) { display: none;}
+      .logoPS:nth-child(8) { display: none;}
+  
+}
+@media (max-width: 600px) {
+  .logoPS {
+      display: none;
+  }
+}
 
 @keyframes fadeIn {
     0%, 100% {
