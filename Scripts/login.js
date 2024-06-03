@@ -1,13 +1,16 @@
 // Selecciona todos los inputs
 let inputs = document.querySelectorAll('input');
-const token = null;
+let token = null;
+
+const email = document.getElementById('email');
+const password = document.getElementById('password');
 
 const setToken = newToken =>{
     token = `Bearer ${newToken}`;
 } 
 
 //const url = "https://cinefiles-backend.onrender.com"
-const url = "http://127.0.0.1:3000/auth/"
+const url = "http://127.0.0.1:3000/auth"
 
 // Para cada input
 inputs.forEach(function(input) {
@@ -25,24 +28,31 @@ inputs.forEach(function(input) {
     });
 });
 
-x
 
-const login = async(event)=>{
-    event.preventDefault();
-    const response = await fetch(url+"login")
+
+const login = async ()=>{
+    const response = await fetch(
+        url+"/login",
+        {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                email: email.value,
+                password: password.value
+            })
+        }
+    )
     .then(res => res.json().then(data => {
         console.log(data);
-        if(res.status === 200 && res.message === "Usuario logueado correctamente"){
+        if(res.status === 200){
             alert("Usuario logueado correctamente");
-            setToken(data.token);
-            window.localStorage.setItem(
-                'LoggedCineUsser', token
-            );
+            window.localStorage.setItem('UserCineLogged', JSON.stringify(data));
             window.location.href = "index.html";
-
         }
     }) ).catch((error) => {
-    console.log(error);
+        console.log(error);
     })
 }
 
@@ -50,15 +60,7 @@ const login = async(event)=>{
 
 document.getElementById('loginbutton').addEventListener('click', async function(event){
     event.preventDefault();
-    const email = document.getElementById('email');
-    const password = document.getElementById('password');
-    const response = await fetch(url+"/movies/all").then((res) => {
-        res.json().then((data) => {
-            console.log(data);
-        }).catch((error) => {
-            console.log(error);
-        });
-    }).catch((error) => {
-        console.log(error);
-    })
+    await login();
+    // mail.value = "";
+    //password.value = "";
 })
