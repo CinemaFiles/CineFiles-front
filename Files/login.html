@@ -36,16 +36,18 @@
             <div class="form-value">
                 <form class="loginf">
                     <h2>Login</h2>
+
                     <div class="inputbox">
                         <ion-icon name="mail-outline"></ion-icon>
-                        <input type="email" required id="user">
-                        <label for="">Correo</label>
+                        <input type="email" required id="email" name ="email-input" >
+                        <label for="email-input">Correo</label>
                     </div>
                     <div class="inputbox">
                         <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password" required id="password">
-                        <label for="">Contraseña</label>
+                        <input type="password" required id="password" name = "password-input">
+                        <label for="password-input">Contraseña</label>
                     </div>
+                    
                     <button type="button" id="loginbutton">Log in</button>
                     <div class="register">
                         <p>¿No tienes una cuenta? <a id="register" href="./register.html">Regístrate aquí</a></p>
@@ -54,8 +56,8 @@
             </div>
         </div>
     </section>
-
-    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.1.9/build/spline-viewer.js"></script>
-    <spline-viewer url="https://prod.spline.design/OKO2TjrSPYX0H9Sr/scene.splinecode"></spline-viewer>
+    <script src="/Scripts/login.js"></script>
+    <!-- <script type="module" src="https://unpkg.com/@splinetool/viewer@1.1.9/build/spline-viewer.js"></script> -->
+    <!-- <spline-viewer url="https://prod.spline.design/OKO2TjrSPYX0H9Sr/scene.splinecode"></spline-viewer> -->
 </body>
 </html>

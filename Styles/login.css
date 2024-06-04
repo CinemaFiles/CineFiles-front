@@ -134,7 +134,7 @@ spline-viewer {
 .form-box{
     position: relative;
     width: 400px;
-    height: 450px;
+    height: 400px;
     background: transparent;
     border: 2px solid rgba(255,255,255,0.5);
     border-radius: 20px;
@@ -142,7 +142,6 @@ spline-viewer {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 h2{
     font-size: 2em;
@@ -160,7 +159,7 @@ h2{
     position: absolute;
     top: 50%;
     left: 5px;
-    transform: translateY(-50%);
+    transform: translateY(-50%); /* esta  cosa es lo que hace que siba */
     color: #fff;
     font-size: 1em;
     pointer-events: none;
@@ -169,10 +168,26 @@ h2{
 .loginf{
     background: transparent;
 }
-input:focus ~ label,
-input:valid ~ label{
+
+/* input:empty ~ label, */
+
+/* input:focus ~ label,
+input:valid ~ {
 top: -5px;
 }
+ */
+
+ /* Cuando el input no está enfocado y no tiene contenidos */
+input:placeholder-shown ~ label {
+    top: 0px; /* Reemplaza 'original_position' con la posición original del label */
+}
+
+/* Cuando el input está enfocado o tiene contenido */
+input:not(:placeholder-shown) ~ label,
+input:focus ~ label {
+    top: -5px;
+}
+
 .inputbox input {
     width: 100%;
     height: 50px;
