@@ -1,6 +1,6 @@
-//const url = "https://cinefiles-backend.onrender.com"
+const { profileEnd } = require("console");
 
-const url = "https://cinefiles-backend.onrender.com";
+const url = process.env.URL + "/auth";
 const email = document.getElementById('email');
 const user = document.getElementById('user');
 const password = document.getElementById('password');
@@ -9,7 +9,7 @@ const password = document.getElementById('password');
 
 const register = async(event)=>{
     event.preventDefault();
-    const response = await fetch(url+"/auth/register", {
+    const response = await fetch(url+"/register", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
