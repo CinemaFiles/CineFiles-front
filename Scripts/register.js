@@ -1,6 +1,6 @@
 //const url = "https://cinefiles-backend.onrender.com"
 
-const url = "http://127.0.0.1:3000"
+const url = "https://cinefiles-backend.onrender.com/auth";
 const email = document.getElementById('email');
 const user = document.getElementById('user');
 const password = document.getElementById('password');

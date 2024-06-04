@@ -10,7 +10,7 @@ const setToken = newToken =>{
 } 
 
 //const url = "https://cinefiles-backend.onrender.com"
-const url = "http://127.0.0.1:3000/auth"
+const url = "https://cinefiles-backend.onrender.com/auth"
 
 // Para cada input
 inputs.forEach(function(input) {
