@@ -1,5 +1,3 @@
-const { profileEnd } = require("console");
-
 const url = "https://cinefiles-backend.onrender.com" + "/auth";
 const email = document.getElementById('email');
 const user = document.getElementById('user');
@@ -31,7 +29,6 @@ const register = async(event)=>{
 ).catch(error => console.log(error));
     console.log(response);
 }
-
 
 
 document.getElementById('registerbutton').addEventListener('click', register)

@@ -57,7 +57,42 @@
         </div>
     </section>
 
-    <script src="/js/films.json"></script>
+    <script>
+        const url = "https://cinefiles-backend.onrender.com" + "/auth";
+const email = document.getElementById('email');
+const user = document.getElementById('user');
+const password = document.getElementById('password');
+
+//no se pueden usar promesas en reacts
+
+const register = async(event)=>{
+    event.preventDefault();
+    const response = await fetch(url+"/register", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            name: user.value,
+            email: email.value,
+            password: password.value
+        })
+    }).then(response => response.json().then( data => {
+        console.log(data);
+
+        if(data.status === 200){
+            alert("Usuario registrado correctamente");
+            window.location.href = "login.html";
+            }
+        }
+    )
+).catch(error => console.log(error));
+    console.log(response);
+}
+
+
+document.getElementById('registerbutton').addEventListener('click', register)
+    </script>
     <!-- <script type="module" src="https://unpkg.com/@splinetool/viewer@1.1.9/build/spline-viewer.js"></script> -->
     <!-- <spline-viewer url="https://prod.spline.design/OKO2TjrSPYX0H9Sr/scene.splinecode"></spline-viewer> -->
 </body>
