@@ -9,7 +9,6 @@ const setToken = newToken =>{
     token = `Bearer ${newToken}`;
 } 
 
-//const url = "https://cinefiles-backend.onrender.com"
 const url = "https://cinefiles-backend.onrender.com/auth"
 
 // Para cada input
