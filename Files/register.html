@@ -78,8 +78,8 @@ const register = async(event)=>{
             password: password.value
         })
     }).then(response => response.json().then( data => {
+        
         console.log(data);
-
         if(data.status === 200){
             alert("Usuario registrado correctamente");
             window.location.href = "login.html";
@@ -87,7 +87,7 @@ const register = async(event)=>{
         }
     )
 ).catch(error => console.log(error));
-    console.log(response);
+    console.log(error);
 }
 
 
