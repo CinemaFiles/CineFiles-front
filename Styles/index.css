@@ -10,6 +10,7 @@ body{
     background: black;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 .header{
     position: fixed;
@@ -25,7 +26,7 @@ body{
 }
 
 .logoPS{
-    font-size: 1.5em;
+    font-size: 32px;
     color: white;
     font-family: 'Barcade', sans-serif;
     text-decoration: none;
@@ -34,8 +35,7 @@ body{
     animation-fill-mode: both;
 }
 
-/* Cuando la pantalla tiene 600px o menos, disminuir el tamaño de la fuente */
-/* Cuando la pantalla tiene 600px o menos, ocultar los elementos .logoPS */
+
 @media (max-width: 1400px) {
     
     .logoPS:nth-child(1) { display: none;}
@@ -123,6 +123,20 @@ section {
     color: aliceblue;
     z-index: 10; 
     text-align: center;
+}
+
+.botongh{
+
+    
+    position: relative;
+    z-index: 10; 
+    text-align: center;
+}
+
+.loginboton{
+  
+    z-index: 10;
+    
 }
 
 h1{
