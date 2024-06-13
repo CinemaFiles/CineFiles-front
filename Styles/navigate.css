@@ -12,7 +12,9 @@ body{
     align-items: center;
     justify-content: center;
 }
-.header{
+
+
+.header {
     position: fixed;
     top: 0;
     left: 0;
@@ -23,6 +25,11 @@ body{
     flex-direction: column;
     align-items: center;
     z-index: 100;
+    transition: transform 0.3s ease, padding 0.3s ease;
+}
+
+.header.hidden {
+    transform: translateY(-100%);
 }
 
 .logoPS{
@@ -33,6 +40,7 @@ body{
     opacity: 0; 
     animation: fadeIn 0.5s ease forwards infinite; 
     animation-fill-mode: both;
+    background: transparent;
 }
 
 
@@ -80,6 +88,7 @@ body{
     justify-content: center;
     align-items: center;
     margin-top: 20px; /* Espacio entre el logo y el navbar */
+    background: transparent;
 }
 
 .navbar a{
@@ -90,6 +99,7 @@ body{
     font-weight: 500;
     font-family: 'Barcade No Bar Bold', sans-serif;
     margin-left: 10%;
+    background: transparent;
 
 }
 .navbar a::before {
@@ -99,11 +109,12 @@ body{
     left: 0;
     width: 0;
     height: 2px;
-    background: white;
+    background: transparent;
     transition: .3s;
 }
 .navbar a:hover::before{
     width: 100%;
+    background: transparent;
 }
 
 spline-viewer {
@@ -116,10 +127,11 @@ spline-viewer {
 }
 
 section {
-    position: relative;
-    color: aliceblue;
-    z-index: 10; 
-    background: transparent;
+  margin-top: 25%;
+  position: relative;
+  color: aliceblue;
+  z-index: 10; 
+  background: transparent;
 }
 
 * {
@@ -280,55 +292,71 @@ section {
     }
   }
 
-  /* Pa hacer el carrusel*/
+  /* catalogol cdx*/
 
-.carrusel {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: scroll;
+.catalog {
   background: transparent;
-}
-
-.carrusel img {
-  flex: 1 0 auto;
-  margin: 0 10px;
-  width: 200px;
-  height: 200px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-
-.carrusel::-webkit-scrollbar {
-  display: none;
-}
-select[name="genre"] {
-  background: #171717;
-  color: #f1f1f1;
-  border: 0;
-  border-radius: 0.375em ;
-  padding: 0.75em;
-  width: 6em;
-  height: 4em;
-  cursor: pointer;
-  appearance: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
   justify-content: center;
-  font-family: 'Barcade No Bar Bold', sans-serif;
-
+  padding: 20px;
 }
-option {
-  background: #171717;
+
+.catalog img {
+  background: transparent;
+  width: 90%;
+  height: 10%;
+  transition: transform 0.3s ease-in-out;
+  border-radius: 7%;
+}
+
+.catalog img:hover {
+    transform: scale(1.1);
+}
+
+@media (min-width: 768px) {
+  .catalog img {
+      width: calc(90% / 7 - 9px);
+  }
+}
+
+@media (max-width: 768px) {
+  .catalog img {
+      width: calc(100% / 3 - 10px);
+  }
+}
+
+@media (max-width: 480px) {
+  .catalog img {
+      width: calc(100% / 2 - 10px);
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding: 10px 10px;
+}
+
+.pagination-btn {
+
+  background-color: #171717;
   color: #f1f1f1;
-  border: 0;
-  border-radius: 0.375em ;
-  padding: 0.75em;
-  width: 8em;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 0 10px;
   cursor: pointer;
-  appearance: none;
   font-family: 'Barcade No Bar Bold', sans-serif;
-
+  transition: background-color 0.3s;
 }
 
+.pagination-btn:hover {
+  background-color: #333333;
+}
 
-  
 
