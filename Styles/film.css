@@ -114,11 +114,7 @@ spline-viewer {
     z-index: 1; 
 }
 
-section {
-    position: relative;
-    color: aliceblue;
-    z-index: 10; 
-}
+
 
 
 
@@ -279,4 +275,52 @@ section {
     }
   }
 
-/*ric ardito
+/* films */
+/* films */
+section {
+  position: relative;
+  color: aliceblue;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  z-index: 10;
+  padding: 0 7%;
+}
+
+.first {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  right: 28%;
+}
+
+img {
+  position: relative;
+  width: 15%;
+  height: auto;
+}
+
+.infilm {
+  position: relative;
+  top: -34%;
+  margin-left: 5%;
+  margin-right: 5%;
+
+}
+
+.calif {
+  top: -34%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1%;
+  width: 100px; /* Puedes ajustar el tamaño según tus necesidades */
+  height: 100px; /* Puedes ajustar el tamaño según tus necesidades */
+  background: rgba(255, 255, 255, 0.1); /* Fondo borroso y transparente */
+  backdrop-filter: blur(3px); /* Filtro de desenfoque */
+  border-radius: 10px; /* Bordes redondeados */
+  color: aliceblue;
+  font-size: 1.2rem;
+}
