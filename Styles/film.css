@@ -285,14 +285,27 @@ section {
   justify-content: center;
   z-index: 10;
   padding: 0 7%;
-}
 
+}
+.info {
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Alinear verticalmente los elementos dentro de .info */
+  margin-left: 8%;
+  margin-right: 4%;
+}
 .first {
   position: relative;
   justify-content: center;
   align-items: center;
   display: flex;
-  right: 28%;
+  border-radius: 15px; 
+  background: rgba(255, 255, 255, 0.064); 
+  backdrop-filter: blur(1px); 
+  padding: 5%; 
+  color: aliceblue; 
+
+
 }
 
 img {
@@ -302,11 +315,14 @@ img {
 }
 
 .infilm {
-  position: relative;
-  top: -34%;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-bottom: 1rem; /* Espacio inferior para separar de la sección .calif */
 
+
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  
+  font-style: normal;
+  white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
 }
 
 .calif {
@@ -316,11 +332,35 @@ img {
   justify-content: center;
   align-items: center;
   margin-left: 1%;
-  width: 100px; /* Puedes ajustar el tamaño según tus necesidades */
-  height: 100px; /* Puedes ajustar el tamaño según tus necesidades */
-  background: rgba(255, 255, 255, 0.1); /* Fondo borroso y transparente */
-  backdrop-filter: blur(3px); /* Filtro de desenfoque */
-  border-radius: 10px; /* Bordes redondeados */
+  width: 100px;
+  height: 100px; 
+  background: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(3px); 
+  border-radius: 10px; 
   color: aliceblue;
   font-size: 1.2rem;
+
+}
+
+.synopsis {
+  margin-left: 4%; 
+  max-width: 100%; 
+  text-align: left; 
+  font-size: 1rem;
+  color: aliceblue;
+  
+  font-style: normal;
+}
+
+.description{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2{
+  font-size: small;
+}
+h3{
+  font-size: small;
 }
