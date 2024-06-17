@@ -3,17 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
+    <title>inicio</title>
     <link rel="stylesheet" href="../Styles/film.css">
     <link href="https://fonts.cdnfonts.com/css/wildest" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/barcade" rel="stylesheet">
-    <link rel="stylesheet" href="../Styles/comments.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+
+
 </head>
 <body>
     <header class="header">
         <div>
-            <a href="#" class="logoPS">CineFiles</a>      
+            <a href="#" class="logoPS">CineFiles</a>
+            <a href="#" class="logoPS">CineFiles</a>
+            <a href="#" class="logoPS">CineFiles</a>
+            <a href="#" class="logoPS">CineFiles</a>
+            <a href="#" class="logoPS">CineFiles</a>
+            <a href="#" class="logoPS">CineFiles</a>
+            <a href="#" class="logoPS">CineFiles</a>
+            <a href="#" class="logoPS">CineFiles</a>       
         </div>
+        
         
         <nav id="navbar" class="navbar">
             <a id="navigate" href="./navigate.html">Navigate</a>
@@ -22,28 +37,55 @@
     </header>
     
     <section class="filmsection">
-        <div class="first">
-            <img src="../img/Star-Trek-Vintage-Movie-Poster-Original-1-Sheet-27x41-6717.jpg" alt="">
-            <div class="infilm">
-                <h1>Star Trek</h1>
-                <h2>Sci-fi</h2>
-                <h3>Pat Morita</h3>
-            </div>
-            <div class="calif">
-                <p>8.5/10</p>
-            </div>
-        </div>
+      <div class="first">
+          <img src="../img/Star-Trek-Vintage-Movie-Poster-Original-1-Sheet-27x41-6717.jpg" alt="">
+          <div class="info">
+              <div class="infilm">
+                  <h1 style="  font-family:Roboto Mono, monospace;font-optical-sizing: auto;">Star Trek</h1>
+                  <h2 style="  font-family:Roboto Mono, monospace;font-optical-sizing: auto;">Sci-fi</h2>
+                  <h3 style="  font-family:Roboto Mono, monospace;font-optical-sizing: auto;">Gene Roddenberry</h3>
+              </div>
+              <div class="calif">
+                  <p>8.5/10</p> 
+              </div>
+          </div>
+          <div class="synopsis">
+              <p class="description" style="  font-family:Roboto Mono, monospace;font-optical-sizing: auto;">En el siglo XXIII, el Capitán James T. Kirk y la tripulación de la nave estelar Enterprise exploran nuevos mundos y desafían la supremacía de los klingon.En el siglo XXIII, el Capitán James T. Kirk y la tripulación de la nave estelar Enterprise exploran nuevos mundos y desafían la supremacía de los klingon.</p>
+          </div>
+
+      </div>
+
+
+
     </section>
+    
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.1.9/build/spline-viewer.js"></script>
+    <spline-viewer url="https://prod.spline.design/OKO2TjrSPYX0H9Sr/scene.splinecode"></spline-viewer>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        const sr =ScrollReveal({
+          distance:'65px',
+          duration: 2000,
+          delay: 450,
+          reset: true
+        });
+
+        sr.reveal('.filmsection',{delay: 50, origin:'top'});
+
+        
+    </script>
 
     <section class="comments-wrapper">
         <section class="add-comment-section">
-            <h2>Agregar Comentario</h2>
+            <div>
+                <h2 style="font-size: medium;">Agregar Comentario</h2>
+            </div>
             <textarea type="text" id="comment-input" class="comment-box" placeholder="Escribe un comentario..."></textarea>
             <button class="add-comment-btn">Comentar</button>
         </section>  
         <section class="comments-display-section">
             <div>
-                <h2>Comentarios</h2>
+                <h2 style="font-size: medium;">Comentarios</h2>
             </div>
             <div id="comments-container">
                 <div class="comment">
