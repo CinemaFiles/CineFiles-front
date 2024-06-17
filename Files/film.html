@@ -3,25 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>inicio</title>
+    <title>Inicio</title>
     <link rel="stylesheet" href="../Styles/film.css">
     <link href="https://fonts.cdnfonts.com/css/wildest" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/barcade" rel="stylesheet">
-    
+    <link rel="stylesheet" href="../Styles/comments.css">
 </head>
 <body>
     <header class="header">
         <div>
-            <a href="#" class="logoPS">CineFiles</a>
-            <a href="#" class="logoPS">CineFiles</a>
-            <a href="#" class="logoPS">CineFiles</a>
-            <a href="#" class="logoPS">CineFiles</a>
-            <a href="#" class="logoPS">CineFiles</a>
-            <a href="#" class="logoPS">CineFiles</a>
-            <a href="#" class="logoPS">CineFiles</a>
-            <a href="#" class="logoPS">CineFiles</a>       
+            <a href="#" class="logoPS">CineFiles</a>      
         </div>
-        
         
         <nav id="navbar" class="navbar">
             <a id="navigate" href="./navigate.html">Navigate</a>
@@ -31,20 +23,70 @@
     
     <section class="filmsection">
         <div class="first">
-          <img src="../img/Star-Trek-Vintage-Movie-Poster-Original-1-Sheet-27x41-6717.jpg" alt="">
-          <div class="infilm">
-            <h1>Star Trek</h1>
-            <h2>Sci-fi</h2>
-            <h3>Pat Morita</h3>
-          </div>
-          <div class="calif">
-            <p>8.5/10</p> <!-- Aquí va la calificación de la película -->
-          </div>
+            <img src="../img/Star-Trek-Vintage-Movie-Poster-Original-1-Sheet-27x41-6717.jpg" alt="">
+            <div class="infilm">
+                <h1>Star Trek</h1>
+                <h2>Sci-fi</h2>
+                <h3>Pat Morita</h3>
+            </div>
+            <div class="calif">
+                <p>8.5/10</p>
+            </div>
         </div>
     </section>
-    
-    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.1.9/build/spline-viewer.js"></script>
-    <spline-viewer url="https://prod.spline.design/OKO2TjrSPYX0H9Sr/scene.splinecode"></spline-viewer>
 
+    <section class="comments-wrapper">
+        <section class="add-comment-section">
+            <h2>Agregar Comentario</h2>
+            <textarea type="text" id="comment-input" class="comment-box" placeholder="Escribe un comentario..."></textarea>
+            <button class="add-comment-btn">Comentar</button>
+        </section>  
+        <section class="comments-display-section">
+            <div>
+                <h2>Comentarios</h2>
+            </div>
+            <div id="comments-container">
+                <div class="comment">
+                    <strong>Usuario:</strong> ¡Excelente película! recomendadisiiima wasaaaaaaaaaaaaa
+                </div>
+                <div class="comment">
+                    <strong>Usuario:</strong> Me encantó la trama.
+                </div>
+                <div class="comment">
+                    <strong>Usuario:</strong> ¡Muy buena!
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const commentsContainer = document.getElementById('comments-container');
+            const commentInput = document.getElementById('comment-input');
+            const addCommentButton = document.querySelector('.add-comment-btn');
+
+            function addComment() {
+                const newCommentText = commentInput.value.trim();
+
+                if (newCommentText !== '') {
+                    const newCommentElement = document.createElement('div');
+                    newCommentElement.classList.add('comment');
+                    newCommentElement.innerHTML = '<strong>Usuario:</strong> ' + newCommentText;
+
+                    commentsContainer.appendChild(newCommentElement);
+                    commentInput.value = '';
+                }
+            }
+
+            addCommentButton.addEventListener('click', addComment);
+
+            commentInput.addEventListener('keypress', function(event) {
+                if (event.key === 'Enter') {
+                    event.preventDefault(); 
+                    addComment();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
