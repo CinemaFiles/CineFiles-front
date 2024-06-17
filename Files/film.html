@@ -28,7 +28,7 @@
             <a href="#" class="logoPS">CineFiles</a>
             <a href="#" class="logoPS">CineFiles</a>       
         </div>
-        
+    
         
         <nav id="navbar" class="navbar">
             <a id="navigate" href="./navigate.html">Navigate</a>
@@ -75,5 +75,60 @@
         
     </script>
 
+    <section class="comments-wrapper">
+        <section class="add-comment-section">
+            <div>
+                <h2 style="font-size: medium;">Agregar Comentario</h2>
+            </div>
+            <textarea type="text" id="comment-input" class="comment-box" placeholder="Escribe un comentario..."></textarea>
+            <button class="add-comment-btn">Comentar</button>
+        </section>  
+        <section class="comments-display-section">
+            <div>
+                <h2 style="font-size: medium;">Comentarios</h2>
+            </div>
+            <div id="comments-container">
+                <div class="comment">
+                    <strong>Usuario:</strong> ¡Excelente película! recomendadisiiima wasaaaaaaaaaaaaa
+                </div>
+                <div class="comment">
+                    <strong>Usuario:</strong> Me encantó la trama.
+                </div>
+                <div class="comment">
+                    <strong>Usuario:</strong> ¡Muy buena!
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const commentsContainer = document.getElementById('comments-container');
+            const commentInput = document.getElementById('comment-input');
+            const addCommentButton = document.querySelector('.add-comment-btn');
+
+            function addComment() {
+                const newCommentText = commentInput.value.trim();
+
+                if (newCommentText !== '') {
+                    const newCommentElement = document.createElement('div');
+                    newCommentElement.classList.add('comment');
+                    newCommentElement.innerHTML = '<strong>Usuario:</strong> ' + newCommentText;
+
+                    commentsContainer.appendChild(newCommentElement);
+                    commentInput.value = '';
+                }
+            }
+
+            addCommentButton.addEventListener('click', addComment);
+
+            commentInput.addEventListener('keypress', function(event) {
+                if (event.key === 'Enter') {
+                    event.preventDefault(); 
+                    addComment();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
