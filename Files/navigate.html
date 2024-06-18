@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="../Styles/navigate.css">
     <link href="https://fonts.cdnfonts.com/css/wildest" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/barcade" rel="stylesheet">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"/>
     
 </head>
 <body>
@@ -35,16 +38,9 @@
         <form action="" class="search-bar">
             <input type="search" name="search" pattern=".*\S.*" required>
             <button class="search-btn" type="submit">
-              <span>Search</span>
+                Search
             </button>
-            <select name="genre" id="genre">
-                <option value="todos">Todos</option>
-                <option value="action">Action</option>
-                <option value="comedy">Comedy</option>
-                <option value="drama">Drama</option>
-                <option value="horror">Horror</option>
-                
-            </select>
+
         </form>
 
 
@@ -89,10 +85,10 @@
             window.addEventListener('scroll', function() {
                 let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
                 if (scrollTop > lastScrollTop) {
-                    // Scroll down
+                    
                     header.classList.add('hidden');
                 } else {
-                    // Scroll up
+                    
                     header.classList.remove('hidden');
                 }
                 lastScrollTop = scrollTop;
