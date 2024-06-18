@@ -279,4 +279,22 @@ section {
   background-color: #333333;
 }
 
+@media (max-height: 1900px) {
+  section {
+      margin-top: 25%; /* Adjust based on your header height */
+  }
+}
+
+@media (max-height:1600px){
+  section{
+    margin-top: 28%;
+  }
+}
+
+@media (max-height:1400px){
+  section{
+    margin-top:30%;
+  }
+}
+
 
