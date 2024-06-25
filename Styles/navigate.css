@@ -3,18 +3,10 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "poppins", sans-serif;
-    background-color: black;
-}
-body{
-    min-height: 100vh;
-    display: flex;
-    background: black;
-    align-items: center;
-    justify-content: center;
+    
 }
 
-
-.header {
+.header{
     position: fixed;
     top: 0;
     left: 0;
@@ -25,12 +17,14 @@ body{
     flex-direction: column;
     align-items: center;
     z-index: 100;
-    transition: transform 0.3s ease, padding 0.3s ease;
 }
 
+
+
 .header.hidden {
-    transform: translateY(-100%);
+  transform: translateY(-100%);
 }
+
 
 .logoPS{
     font-size: 32px;
@@ -40,30 +34,31 @@ body{
     opacity: 0; 
     animation: fadeIn 0.5s ease forwards infinite; 
     animation-fill-mode: both;
-    background: transparent;
 }
 
 
 @media (max-width: 1400px) {
     
-  .logoPS:nth-child(1) { display: none;}
+    .logoPS:nth-child(1) { display: none;}
 
-  .logoPS:nth-child(8) { display: none;}
+    .logoPS:nth-child(8) { display: none;}
 
 }
 @media (max-width: 900px) {
-  
-      .logoPS:nth-child(1) { display: none;}
-      .logoPS:nth-child(2) { display: none;}
-      .logoPS:nth-child(7) { display: none;}
-      .logoPS:nth-child(8) { display: none;}
-  
+    
+        .logoPS:nth-child(1) { display: none;}
+        .logoPS:nth-child(2) { display: none;}
+        .logoPS:nth-child(7) { display: none;}
+        .logoPS:nth-child(8) { display: none;}
+    
 }
 @media (max-width: 600px) {
-  .logoPS {
-      display: none;
-  }
+    .logoPS {
+        display: none;
+    }
 }
+
+
 
 @keyframes fadeIn {
     0%, 100% {
@@ -88,7 +83,6 @@ body{
     justify-content: center;
     align-items: center;
     margin-top: 20px; /* Espacio entre el logo y el navbar */
-    background: transparent;
 }
 
 .navbar a{
@@ -99,7 +93,6 @@ body{
     font-weight: 500;
     font-family: 'Barcade No Bar Bold', sans-serif;
     margin-left: 10%;
-    background: transparent;
 
 }
 .navbar a::before {
@@ -109,12 +102,11 @@ body{
     left: 0;
     width: 0;
     height: 2px;
-    background: transparent;
+    background: white;
     transition: .3s;
 }
 .navbar a:hover::before{
     width: 100%;
-    background: transparent;
 }
 
 spline-viewer {
@@ -287,7 +279,7 @@ section {
 
 @media (max-height:1600px){
   section{
-    margin-top: 28%;
+    margin-top: 27%;
   }
 }
 

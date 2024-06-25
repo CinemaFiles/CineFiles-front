@@ -4,13 +4,31 @@
     box-sizing: border-box;
     font-family: "poppins", sans-serif;
 }
-body{
+body {
     min-height: 100vh;
     display: flex;
-    background: black;
+    background: url('../img/gisito.gif') no-repeat center fixed;
+    background-size: cover;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    position: relative;
 }
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(5px);
+    opacity: 1; /* Ajusta el valor para más o menos opacidad */
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.4); 
+}
+
 .header{
     position: fixed;
     top: 0;
