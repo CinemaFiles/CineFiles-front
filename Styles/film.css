@@ -4,13 +4,7 @@
   box-sizing: border-box;
   font-family: "poppins", sans-serif;
 }
-body{
-  min-height: 100vh;
-  display: flex;
 
-  align-items: center;
-  justify-content: center;
-}
 .header{
   position: fixed;
   top: 0;
@@ -22,6 +16,20 @@ body{
   flex-direction: column;
   align-items: center;
   z-index: 100;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  filter: blur(5px);
+  opacity: 1; /* Ajusta el valor para más o menos opacidad */
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.4); 
 }
 
 .logoPS{
@@ -278,78 +286,79 @@ spline-viewer {
 /* films */
 /* films */
 section {
-position: relative;
-color: aliceblue;
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-z-index: 10;
-padding: 0 7%;
+  position: relative;
+  color: aliceblue;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  z-index: 10;
+  padding: 0 7%;
+  margin-top: 20%;
 
 }
 .info {
-position: relative;
-display: flex;
-flex-direction: column; /* Alinear verticalmente los elementos dentro de .info */
-margin-left: 8%;
-margin-right: 4%;
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Alinear verticalmente los elementos dentro de .info */
+  margin-left: 8%;
+  margin-right: 4%;
 }
 .first {
-position: relative;
-justify-content: center;
-align-items: center;
-display: flex;
-border-radius: 15px; 
-background: rgba(255, 255, 255, 0.064); 
-backdrop-filter: blur(1px); 
-padding: 5%; 
-color: aliceblue; 
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-radius: 15px; 
+  background: rgba(255, 255, 255, 0.064); 
+  backdrop-filter: blur(1px); 
+  padding: 5%; 
+  color: aliceblue; 
 
 
 }
 
 img {
-position: relative;
-width: 15%;
-height: auto;
+  position: relative;
+  width: 15%;
+  height: auto;
 }
 
 .infilm {
-margin-bottom: 1rem; /* Espacio inferior para separar de la sección .calif */
+  margin-bottom: 1rem; /* Espacio inferior para separar de la sección .calif */
 
 
-font-family: "Roboto Mono", monospace;
-font-optical-sizing: auto;
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
 
-font-style: normal;
-white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
+  font-style: normal;
+  white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
 }
 
 .calif {
-top: -34%;
-position: relative;
-display: flex;
-justify-content: center;
-align-items: center;
-margin-left: 1%;
-width: 100px;
-height: 100px; 
-background: rgba(255, 255, 255, 0.1); 
-backdrop-filter: blur(3px); 
-border-radius: 10px; 
-color: aliceblue;
-font-size: 1.2rem;
+  top: -34%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1%;
+  width: 100px;
+  height: 100px; 
+  background: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(3px); 
+  border-radius: 10px; 
+  color: aliceblue;
+  font-size: 1.2rem;
 
 }
 
 .synopsis {
-margin-left: 4%; 
-max-width: 100%; 
-text-align: left; 
-font-size: 1rem;
-color: aliceblue;
-font-size: small;
-font-style: normal;
+  margin-left: 4%; 
+  max-width: 100%; 
+  text-align: left; 
+  font-size: 1rem;
+  color: aliceblue;
+  font-size: small;
+  font-style: normal;
 }
 
 .description{
