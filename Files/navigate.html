@@ -96,7 +96,7 @@
 
         let index = 1;
         const image_base_url ='http://image.tmdb.org/t/p/original';
-        fetch(`http://localhost:3000/movies/home?index=${index}`).then( res => res.json()).then( data => {
+        fetch(`https://cinefiles-backend.onrender.com/movies/home?index=${index}`).then( res => res.json()).then( data => {
             data.forEach( movie => {
                 const img = document.createElement('img');
                 img.src = image_base_url + movie.Poster;
@@ -122,7 +122,7 @@
             }
             //otro fetch
 
-            fetch(`http://localhost:3000/movies/home?index=${index}`).then( res => res.json()).then( data => {
+            fetch(`https://cinefiles-backend.onrender.com/movies/home?index=${index}`).then( res => res.json()).then( data => {
             data.forEach( movie => {
                 const img = document.createElement('img');
                 img.src = image_base_url + movie.Poster;
@@ -146,7 +146,7 @@
             e.preventDefault();
             index++;
             catalog.innerHTML = '';
-            fetch(`http://localhost:3000/movies/home?index=${index}`).then( res => res.json()).then( data => {
+            fetch(`https://cinefiles-backend.onrender.com/movies/home?index=${index}`).then( res => res.json()).then( data => {
                 data.forEach( movie => {
                     const img = document.createElement('img');
                     img.src = image_base_url + movie.Poster;
@@ -164,7 +164,7 @@
             e.preventDefault();
             //console.log(input.value);
             catalog.innerHTML = '';
-            fetch(`http://localhost:3000/movies/search/${input.value}`)
+            fetch(`https://cinefiles-backend.onrender.com/movies/search/${input.value}`)
             .then( res => res.json()).then((data) => {
                 data.forEach( movie => {
                     const img = document.createElement('img');
