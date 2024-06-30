@@ -62,8 +62,8 @@
         
         
         <form action="" class="search-bar">
-            <input type="search" name="search" pattern=".*\S.*" required>
-            <button class="search-btn" type="submit">
+            <input type="search" name="search" id="search" pattern=".*\S.*" required>
+            <button class="search-btn" id = "search-btn" type="submit">
                 Search
             </button>
 
@@ -75,33 +75,12 @@
 
 
 
-        <div class="catalog">
-            <img class="peliimg" src="/img/518yajcZbDL.jpg"  alt="">
-            <img class="peliimg" src="/img/a50f147583dbd5787c3bc6163af4f97e.jpg" alt="">
-            <img class="peliimg" src="/img/Star-Trek-Vintage-Movie-Poster-Original-1-Sheet-27x41-6717.jpg" alt="">
-            <img class="peliimg" src="/img/tbc.webp" alt="">
-            <img class="peliimg" src="/img/tron.webp" alt="">
-            <img class="peliimg" src="/img/913iYTmWPwL.jpg" alt="">
-            <img class="peliimg" src="/img/518yajcZbDL.jpg" alt="">
-            <img class="peliimg" src="/img/518yajcZbDL.jpg" alt="">
-            <img class="peliimg" src="/img/a50f147583dbd5787c3bc6163af4f97e.jpg" alt="">
-            <img class="peliimg" src="/img/Star-Trek-Vintage-Movie-Poster-Original-1-Sheet-27x41-6717.jpg" alt="">
-            <img class="peliimg" src="/img/tbc.webp" alt="">
-            <img class="peliimg" src="/img/tron.webp" alt="">
-            <img class="peliimg" src="/img/913iYTmWPwL.jpg" alt="">
-            <img class="peliimg" src="/img/518yajcZbDL.jpg" alt="">
-            <img class="peliimg" src="/img/518yajcZbDL.jpg" alt="">
-            <img class="peliimg" src="/img/a50f147583dbd5787c3bc6163af4f97e.jpg" alt="">
-            <img class="peliimg" src="/img/Star-Trek-Vintage-Movie-Poster-Original-1-Sheet-27x41-6717.jpg" alt="">
-            <img class="peliimg" src="/img/tbc.webp" alt="">
-            <img class="peliimg" src="/img/tron.webp" alt="">
-            <img class="peliimg" src="/img/913iYTmWPwL.jpg" alt="">
-            <img class="peliimg" src="/img/518yajcZbDL.jpg" alt="">
+        <div class="catalog" id="catalog">
         </div>
 
         <div class="pagination">
-            <button class="pagination-btn prev">Prev</button>
-            <button class="pagination-btn next">Next</button>
+            <button id="prev" class="pagination-btn prev">Prev</button>
+            <button id="next" class="pagination-btn next" >Next</button>
         </div>
         
     </section>
@@ -109,6 +88,101 @@
 
 
     <script>
+        const catalog = document.getElementById('catalog');
+        const prev = document.querySelector('#prev');
+        const next = document.querySelector('#next');
+        const searchbtn = document.getElementById('search-btn');
+        const input = document.getElementById('search');
+
+        let index = 1;
+        const image_base_url ='http://image.tmdb.org/t/p/original';
+        fetch(`https://cinefiles-backend.onrender.com/movies/home?index=${index}`).then( res => res.json()).then( data => {
+            data.forEach( movie => {
+                const link = document.createElement('a');
+                link.href = "https://netflix.com";
+                const img = document.createElement('img');
+                img.src = image_base_url + movie.Poster;
+                img.alt =  movie.title;
+                img.classList.add('peliimg');
+                link.appendChild(img);
+                catalog.appendChild(link);
+            })
+            
+        }).catch((error) => {
+            console.error('Error:', error);
+        })
+
+        prev.addEventListener('click', (e) => {
+            e.preventDefault();
+            catalog.innerHTML = '';
+            if(index <=1){
+                //desabilitar boton prev
+                prev.disabled = true;
+            }
+            else{
+                prev.disabled = false;
+                index--;
+            }
+            //otro fetch
+
+            fetch(`https://cinefiles-backend.onrender.com/movies/home?index=${index}`).then( res => res.json()).then( data => {
+            data.forEach( movie => {
+                const img = document.createElement('img');
+                img.src = image_base_url + movie.Poster;
+                img.alt =  movie.title;
+                img.classList.add('peliimg');
+                catalog.appendChild(img);
+                //benja si lees esto arregla el front
+                //benja si lees esto arregla el front
+                //benja si lees esto arregla el front
+                //benja si lees esto arregla el front
+                //necesito que cambies para que pongas <a> dentro de <img>
+                })
+
+            }).catch((error) => {
+                console.error('Error:', error);
+            })
+
+        })
+
+        next.addEventListener('click', (e) => {
+            e.preventDefault();
+            index++;
+            catalog.innerHTML = '';
+            fetch(`https://cinefiles-backend.onrender.com/movies/home?index=${index}`).then( res => res.json()).then( data => {
+                data.forEach( movie => {
+                    const img = document.createElement('img');
+                    img.src = image_base_url + movie.Poster;
+                    img.alt =  movie.title;
+                    img.classList.add('peliimg');
+                    catalog.appendChild(img);
+
+                })
+            }).catch((error) => {
+                console.error('Error:', error);
+                })
+            })
+        
+        searchbtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            //console.log(input.value);
+            catalog.innerHTML = '';
+            fetch(`https://cinefiles-backend.onrender.com/movies/search/${input.value}`)
+            .then( res => res.json()).then((data) => {
+                data.forEach( movie => {
+                    const img = document.createElement('img');
+                    img.src = image_base_url + movie.Poster;
+                    img.alt =  movie.title;
+                    img.classList.add('peliimg');
+                    catalog.appendChild(img);
+                })
+                console.log(data);
+            }).catch(error =>{
+                console.log(error)
+            })
+
+        })
+
 
     </script>
 
