@@ -93,7 +93,7 @@
         const next = document.querySelector('#next');
         const searchbtn = document.getElementById('search-btn');
         const input = document.getElementById('search');
-
+        
         let index = 1;
         const image_base_url ='http://image.tmdb.org/t/p/original';
         fetch(`https://cinefiles-backend.onrender.com/movies/home?index=${index}`).then( res => res.json()).then( data => {
