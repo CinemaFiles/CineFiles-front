@@ -206,31 +206,48 @@ section {
 
   /* catalogol cdx*/
 
-.catalog {
-  background: transparent;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  padding: 20px;
-}
-
-.catalog a {
-  background: transparent;
-  width: calc(100% / 5 - 10px); /* Ajusta el divisor (5) para cambiar la cantidad de columnas */
-}
-
-.catalog img {
-  width: 100%;
-  height: auto;
-  transition: transform 0.3s ease-in-out;
-  border-radius: 7%;
-}
-
-.catalog img:hover {
-    transform: scale(1.1);
-}
-
+  .catalog {
+    background: transparent;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .catalog a {
+    background: transparent;
+    width: calc(100% / 7 - 10px); 
+  }
+  
+  .catalog img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 7%;
+  }
+  
+  .catalog img:hover {
+      transform: scale(1.1);
+  }
+  
+  @media (min-width: 768px) {
+    .catalog a {
+        width: calc(100% / 7 - 10px); 
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .catalog a {
+        width: calc(100% / 3 - 10px);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .catalog a {
+        width: calc(100% / 2 - 10px);
+    }
+  }
 .pagination {
   display: flex;
   justify-content: center;
@@ -239,7 +256,9 @@ section {
   margin-bottom: 10px;
   padding: 10px 10px;
 }
+
 .pagination-btn {
+
   background-color: #171717;
   color: #f1f1f1;
   border: none;
@@ -250,24 +269,27 @@ section {
   font-family: 'Barcade No Bar Bold', sans-serif;
   transition: background-color 0.3s;
 }
+
 .pagination-btn:hover {
   background-color: #333333;
 }
 
-@media (min-width: 768px) {
-  .catalog a {
-      width: calc(100% / 7 - 10px); /* Ajusta el divisor (7) para cambiar la cantidad de columnas */
+@media (max-height: 1900px) {
+  section {
+      margin-top: 25%; 
   }
 }
 
-@media (max-width: 768px) {
-  .catalog a {
-      width: calc(100% / 3 - 10px);
+@media (max-height:1600px){
+  section{
+    margin-top: 27%;
   }
 }
 
-@media (max-width: 480px) {
-  .catalog a {
-      width: calc(100% / 2 - 10px);
+@media (max-height:1400px){
+  section{
+    margin-top:30%;
   }
 }
+
+
