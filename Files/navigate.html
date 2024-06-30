@@ -98,11 +98,14 @@
         const image_base_url ='http://image.tmdb.org/t/p/original';
         fetch(`https://cinefiles-backend.onrender.com/movies/home?index=${index}`).then( res => res.json()).then( data => {
             data.forEach( movie => {
+                const link = document.createElement('a');
+                link.href = "https://netflix.com";
                 const img = document.createElement('img');
                 img.src = image_base_url + movie.Poster;
                 img.alt =  movie.title;
                 img.classList.add('peliimg');
-                catalog.appendChild(img);
+                link.appendChild(img);
+                catalog.appendChild(link);
             })
             
         }).catch((error) => {
