@@ -99,7 +99,7 @@
         fetch(`https://cinefiles-backend.onrender.com/movies/home?index=${index}`).then( res => res.json()).then( data => {
             data.forEach( movie => {
                 const link = document.createElement('a');
-                link.href = "https://netflix.com";
+                link.href = `https://cinefiles-backend.onrender.com/movies/info_movie/${movie.id}`;
                 const img = document.createElement('img');
                 img.src = image_base_url + movie.Poster;
                 img.alt =  movie.title;
@@ -127,16 +127,14 @@
 
             fetch(`https://cinefiles-backend.onrender.com/movies/home?index=${index}`).then( res => res.json()).then( data => {
             data.forEach( movie => {
+                const link = document.createElement('a');
+                link.href = `https://cinefiles-backend.onrender.com/movies/info_movie/${movie.id}`;
                 const img = document.createElement('img');
                 img.src = image_base_url + movie.Poster;
                 img.alt =  movie.title;
                 img.classList.add('peliimg');
-                catalog.appendChild(img);
-                //benja si lees esto arregla el front
-                //benja si lees esto arregla el front
-                //benja si lees esto arregla el front
-                //benja si lees esto arregla el front
-                //necesito que cambies para que pongas <a> dentro de <img>
+                link.appendChild(img);
+                catalog.appendChild(link);
                 })
 
             }).catch((error) => {
@@ -151,12 +149,14 @@
             catalog.innerHTML = '';
             fetch(`https://cinefiles-backend.onrender.com/movies/home?index=${index}`).then( res => res.json()).then( data => {
                 data.forEach( movie => {
+                    const link = document.createElement('a');
+                    link.href = `https://cinefiles-backend.onrender.com/movies/info_movie/${movie.id}`;
                     const img = document.createElement('img');
                     img.src = image_base_url + movie.Poster;
                     img.alt =  movie.title;
                     img.classList.add('peliimg');
-                    catalog.appendChild(img);
-
+                    link.appendChild(img);
+                    catalog.appendChild(link);
                 })
             }).catch((error) => {
                 console.error('Error:', error);
@@ -169,13 +169,25 @@
             catalog.innerHTML = '';
             fetch(`https://cinefiles-backend.onrender.com/movies/search/${input.value}`)
             .then( res => res.json()).then((data) => {
-                data.forEach( movie => {
-                    const img = document.createElement('img');
-                    img.src = image_base_url + movie.Poster;
-                    img.alt =  movie.title;
-                    img.classList.add('peliimg');
-                    catalog.appendChild(img);
-                })
+                
+                if(data.length === 0 ){
+                    const message = document.createElement('h1');
+                    console.log(message)
+                    message.textContent = "No se encontro la pelicula"
+                    catalog.appendChild(message)
+                }
+                else{
+                    data.forEach( movie => {
+                        const link = document.createElement('a');
+                        link.href = `https://cinefiles-backend.onrender.com/movies/info_movie/${movie.id}`;
+                        const img = document.createElement('img');
+                        img.src = image_base_url + movie.Poster;
+                        img.alt =  movie.title;
+                        img.classList.add('peliimg');
+                        link.appendChild(img);
+                        catalog.appendChild(link);
+                    })
+                }
                 console.log(data);
             }).catch(error =>{
                 console.log(error)
