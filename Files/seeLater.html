@@ -85,6 +85,14 @@
                         <p><strong>Correo:</strong></p>
                         <span id="profile-email"></span>
                     </div>
+                    
+<!-- 
+                    <div class="profile_info_item" id="recomendaciones">
+                        <p><strong>Peliculas Recomendadas:</strong></p>
+                        <span id="profile-country"></span>
+                    </div> -->
+
+
                 </div>
             </div>
         </section>
@@ -111,7 +119,7 @@
                 console.log(recContainer)
                 console.log('id')
                 console.log(data.id)
-                fetch("https://cinefiles-backend.onrender.com/movies/watchlater/all",
+                fetch("http://localhost:3000/movies/watchlater/all",
                 {
                     method:'POST',
                     headers: {
@@ -126,7 +134,7 @@
                     info.forEach(element => {
                         console.log(element)
 
-                        fetch(`https://cinefiles-backend.onrender.com/movies/data/${element}`)
+                        fetch(`http://localhost:3000/movies/data/${element}`)
                         .then(res => res.json())
                         .then(res => {
                             console.log(res)
