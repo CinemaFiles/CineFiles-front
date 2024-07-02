@@ -313,9 +313,8 @@ section {
   backdrop-filter: blur(1px); 
   padding: 5%; 
   color: aliceblue; 
-  height: 70%;
-
-
+  
+  max-height: 420px;
 }
 
 img {
@@ -360,13 +359,12 @@ img {
   color: aliceblue;
   font-size: small;
   font-style: normal;
+  overflow-y: auto;
+  max-height: 380px; 
+  
 }
 
-.description{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 h2{
 font-size: small;
