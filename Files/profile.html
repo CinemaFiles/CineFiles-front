@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="../Styles/profile.css">
     <link href="https://fonts.cdnfonts.com/css/wildest" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/barcade" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body {
             background: url('./gisito.gif') no-repeat center center fixed;
@@ -68,7 +71,7 @@
         </nav>
 
     </header>
-    <main>
+    <main style="margin-top: -15%;">
         <section class="profile">
             <div class="profile_img_container">
                 <div class="profile_img">
@@ -88,10 +91,37 @@
                 </div>
             </div>
         </section>
-        
-        <section id="recomendaciones">
-
+    
+        <section class="movies">
+            <h2 class="recom">Recomendaciones</h2>
+            <div class="recomendaciones">
+                <a href="#"><img src="../img/518yajcZbDL.jpg" alt="Pelicula 1"></a>
+                <a href="#"><img src="../img/913iYTmWPwL.jpg" alt="Pelicula 2"></a>
+                <a href="#"><img src="../img/a50f147583dbd5787c3bc6163af4f97e.jpg" alt="Pelicula 3"></a>
+                <a href="#"><img src="../img/Star-Trek-Vintage-Movie-Poster-Original-1-Sheet-27x41-6717.jpg" alt="Pelicula 4"></a>
+                <a href="#"><img src="../img/tron.webp" alt="Pelicula 5"></a>
+                <a href="#"><img src="../img/tbc.webp" alt="pelicula 6"></a>
+                <a href="#"><img src="../img/518yajcZbDL.jpg" alt="Pelicula 7"></a>
+                                
+            </div>
+    
+            <h2 class="recom">Ver más tarde</h2>
+            <div class="ver-mas-tarde">
+                <a href="#"><img src="../img/518yajcZbDL.jpg" alt="Pelicula 1"></a>
+                <a href="#"><img src="../img/913iYTmWPwL.jpg" alt="Pelicula 2"></a>
+                <a href="#"><img src="../img/a50f147583dbd5787c3bc6163af4f97e.jpg" alt="Pelicula 3"></a>
+                <a href="#"><img src="../img/Star-Trek-Vintage-Movie-Poster-Original-1-Sheet-27x41-6717.jpg" alt="Pelicula 4"></a>
+                <a href="#"><img src="../img/tron.webp" alt="Pelicula 5"></a>
+                <a href="#"><img src="../img/tbc.webp" alt="pelicula 6"></a>
+                <a href="#"><img src="../img/518yajcZbDL.jpg" alt="Pelicula 7"></a>
+            </div>
         </section>
+
+    </main>
+
+        
+
+
         <script>
             const user = window.localStorage.getItem('UserCineLogged');
             if(!user){

@@ -1,28 +1,36 @@
+main {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+}
+
 .profile {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 20px;
     min-height: 50vh;
     background-color: rgba(0, 0, 0, 0.7);
     padding: 20px;
-    margin-top: 5%;
+    max-width: 300px;
 }
 
 .profile_img_container {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     background-color: rgba(0, 0, 0);
-    margin-right: 20px;
+    margin-bottom: 20px;
 }
 
 .profile_img img {
-    width: 400px;
-    height: 400px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -34,8 +42,7 @@
     border-radius: 15px;
     background-color: rgb(29, 29, 29);
     padding: 20px;
-    width: 600px;
-    max-width: 600px;
+    width: 100%;
 }
 
 .profile_info {
@@ -44,7 +51,6 @@
 
 .profile_info p {
     margin: 10px 0;
- 
 }
 
 .profile_info span {
@@ -53,4 +59,45 @@
     border-radius: 10px;
     display: inline-block;
     margin-left: 5px;
+}
+
+.movies {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 20px;
+}
+
+.recomendaciones, .ver-mas-tarde {
+    display: flex;
+    flex-wrap: nowrap; /* Evita el wrap de los elementos */
+    gap: 10px;
+    overflow-x: auto; /* Añade scroll horizontal si es necesario */
+    justify-content: flex-start;
+}
+
+.recomendaciones a, .ver-mas-tarde a {
+    text-decoration: none;
+    padding: 1%;
+}
+
+.recom {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    width: 100%;
+    font-family: "Mukta", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.recomendaciones img, .ver-mas-tarde img {
+    width: 100px; /* Tamaño más pequeño */
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.recomendaciones img:hover, .ver-mas-tarde img:hover {
+    transform: scale(1.1);
 }
