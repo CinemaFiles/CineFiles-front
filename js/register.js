@@ -19,15 +19,21 @@ const register = async(event)=>{
         })
     }).then(response => response.json().then( data => {
         console.log(data);
-
         if(data.status === 200){
             alert("Usuario registrado correctamente");
-            window.location.href = "login.html";
-            }
+            window.location.href = "navigate.html";
         }
-    )
-).catch(error => console.log(error));
-    console.log(response);
+        else{
+            alert(data.error)
+            user.value = ""
+            email.value = "";
+            password.value =""
+        }
+    }
+)
+).catch(error => {
+    console.log(error)
+});
 }
 
 
