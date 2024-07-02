@@ -8,6 +8,12 @@
     <link href="https://fonts.cdnfonts.com/css/wildest" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/barcade" rel="stylesheet">
     <style>
+        * {
+            filter: blur(5px);
+            opacity: 1; /* Ajusta el valor para más o menos opacidad */
+            z-index: -1;
+            background: rgba(0, 0, 0, 0.4); 
+        }
         body {
             background: url('./gisito.gif') no-repeat center center fixed;
             background-size: cover;
@@ -24,10 +30,7 @@
             width: 100%;
             height: 100%;
             background: inherit;
-            filter: blur(5px);
-            opacity: 1; /* Ajusta el valor para más o menos opacidad */
-            z-index: -1;
-            background: rgba(0, 0, 0, 0.4); 
+
         }
 
         header::before {
@@ -66,11 +69,14 @@
             <button class="search-btn" id = "search-btn" type="submit">
                 Search
             </button>
+            
+            
 
         </form>
+       
 
     </header>
-    <section>
+    <section >
         
 
 
@@ -78,7 +84,10 @@
         <div class="catalog" id="catalog">
         </div>
 
-        <div class="pagination">
+        <div class="pagination" style="            filter: blur(5px);
+        opacity: 1; /* Ajusta el valor para más o menos opacidad */
+        z-index: -1;
+        background: rgba(0, 0, 0, 0.4); ">
             <button id="prev" class="pagination-btn prev">Prev</button>
             <button id="next" class="pagination-btn next" >Next</button>
         </div>
