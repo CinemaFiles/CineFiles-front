@@ -76,11 +76,11 @@
 
               <p class="description" style="  font-family:Roboto Mono, monospace;font-optical-sizing: auto;">En el siglo XXIII, el Capitán James T. Kirk y la tripulación de la nave estelar Enterprise exploran nuevos mundos y desafían la supremacía de los klingon.En el siglo XXIII, el Capitán James T. Kirk y la tripulación de la nave estelar Enterprise exploran nuevos mundos y desafían la supremacía de los klingon.</p>
 
-                    <select class="form-select" aria-label="Disabled select example">
+                    <select id="select" class="form-select" aria-label="Disabled select example">
                         <option selected  value="1">Agregar pelicula</option>
                         <option value="2">Marcar como visto</option>
                     </select>
-                    <button type="submit">sumbit</button>
+                    <button type="submit" id="sumbit-btn">sumbit</button>
             </div>
 
           </div>
@@ -108,6 +108,26 @@
           reset: true
         });
         sr.reveal('.filmsection',{delay: 50, origin:'top'});
+    </script>
+    <script>
+        const sumbit = document.getElementById('sumbit-btn');
+        sumbit.addEventListener('click', (e) =>{
+            e.preventDefault();
+            const select = document.getElementById('select')
+            console.log(select)
+            console.log(select.value)
+            if(select.value ===1){
+                fetch('https://cinefiles-backend.onrender.com/movies/watchlater/add')
+                .then(res => res.json())
+                .then(res=>{
+                    console.log(res)
+                    alert('Pelicula agregada a ver mas tarde');
+                })
+            }
+            else if (select.value === 2){
+                alert('Pelicula eliminada')
+            }
+        })
     </script>
 </body>
 </html>
