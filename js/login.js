@@ -51,13 +51,15 @@ const login = async ()=>{
             alert("Usuario logueado correctamente");
             window.localStorage.setItem('UserCineLogged', JSON.stringify(data));
             window.location.href = "index.html";
+        }else{
+            alert("Usuario o contraseña incorrectos")
+            email.value = ""
+            password.value = ""
         }
     }) ).catch((error) => {
         console.log(error);
     })
 }
-
-
 
 document.getElementById('loginbutton').addEventListener('click', async function(event){
     event.preventDefault();
