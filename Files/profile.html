@@ -106,14 +106,14 @@
             </div>
     
             <h2 class="recom">Ver más tarde</h2>
-            <div class="ver-mas-tarde">
+            <div class="ver-mas-tarde" id = "ver-mas-tarde"><!-- 
                 <a href="#"><img src="../img/518yajcZbDL.jpg" alt="Pelicula 1"></a>
                 <a href="#"><img src="../img/913iYTmWPwL.jpg" alt="Pelicula 2"></a>
                 <a href="#"><img src="../img/a50f147583dbd5787c3bc6163af4f97e.jpg" alt="Pelicula 3"></a>
                 <a href="#"><img src="../img/Star-Trek-Vintage-Movie-Poster-Original-1-Sheet-27x41-6717.jpg" alt="Pelicula 4"></a>
                 <a href="#"><img src="../img/tron.webp" alt="Pelicula 5"></a>
                 <a href="#"><img src="../img/tbc.webp" alt="pelicula 6"></a>
-                <a href="#"><img src="../img/518yajcZbDL.jpg" alt="Pelicula 7"></a>
+                <a href="#"><img src="../img/518yajcZbDL.jpg" alt="Pelicula 7"></a> -->
             </div>
         </section>
 
@@ -136,11 +136,7 @@
                 console.log(data)
                 name.innerText = data.user
                 email.innerText = data.email
-                //const recommend = document.getElementById('profile')
-                const recContainer = document.getElementById('recomendaciones')
-                console.log(recContainer)
-                console.log('id')
-                console.log(data.id)
+                const verMasTarde = document.getElementById('ver-mas-tarde')
                 fetch("https://cinefiles-backend.onrender.com/movies/watchlater/all",
                 {
                     method:'POST',
@@ -165,7 +161,7 @@
                             const img = document.createElement('img');
                             img.src = image_base_url+res.Poster
                             link.appendChild(img)
-                            recContainer.appendChild(link)
+                            verMasTarde.appendChild(link)
                         })
                         .catch(error => {
                             console.log(error)
